@@ -1,0 +1,140 @@
+# Quick Setup Guide - Interactive Resume
+
+## 📦 What You Received
+
+A complete Next.js 15 project with an interactive, animated resume featuring:
+- Beautiful notebook/flip-page design
+- Smooth animations with Framer Motion
+- Your updated work experience (Rise Vision, Offtake, Build Quest, etc.)
+- All your projects, skills, and education
+- Responsive design for all devices
+
+## 🚀 Setup Instructions
+
+### Step 1: Prerequisites
+Make sure you have installed:
+- Node.js 18 or higher (Download from https://nodejs.org/)
+- npm (comes with Node.js)
+
+### Step 2: Install Dependencies
+Open terminal/command prompt in the `resume-notebook` folder and run:
+
+```bash
+npm install
+```
+
+This will install:
+- Next.js 15.1.4
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion (for animations)
+
+### Step 3: Run Development Server
+```bash
+npm run dev
+```
+
+Then open your browser to: http://localhost:3000
+
+You should see your beautiful animated resume!
+
+### Step 4: Build for Production
+When you're ready to deploy:
+
+```bash
+npm run build
+npm start
+```
+
+## 📱 How to Use
+
+1. **Navigation**: Use Previous/Next buttons or click page indicators
+2. **Keyboard**: Arrow keys work too
+3. **Mobile**: Fully responsive - works great on phones/tablets
+
+## 🎨 Customization
+
+All content is in the `components/` folder:
+
+- `CoverPage.tsx` - Cover page with name and title
+- `PersonalInfoPage.tsx` - Personal information and objectives
+- `ExperiencePage.tsx` - Work experience (UPDATED with your new roles)
+- `ProjectsPage.tsx` - Your projects
+- `SkillsPage.tsx` - Technical skills
+- `EducationPage.tsx` - Education and achievements
+- `BackCoverPage.tsx` - Contact information
+
+### To Update Content:
+1. Open the relevant component file
+2. Edit the data in the arrays/objects
+3. Save - changes will hot-reload!
+
+## 🌐 Deployment Options
+
+### Option 1: Vercel (Easiest - FREE)
+1. Push code to GitHub
+2. Go to https://vercel.com
+3. Import your repository
+4. Deploy! (automatic)
+
+### Option 2: Netlify (FREE)
+1. Go to https://netlify.com
+2. Drag and drop your build folder
+3. Done!
+
+### Option 3: Traditional Hosting
+1. Run `npm run build`
+2. Upload the `.next` folder and other files
+3. Set up Node.js on your server
+
+## 🎯 Features Included
+
+✅ Flip-page animation (like real notebook)
+✅ Smooth transitions with Framer Motion
+✅ Vintage notebook aesthetic with gold accents
+✅ Responsive design (mobile, tablet, desktop)
+✅ Page indicators and navigation
+✅ Hover effects and micro-interactions
+✅ Professional typography (Playfair Display, Crimson Pro)
+✅ Updated work experience
+✅ All your projects and skills
+✅ Contact information and social links
+
+## 📞 Need Help?
+
+If you have questions:
+1. Check the README.md file
+2. Search for "Next.js documentation"
+3. The code is clean and well-commented
+
+## 🔧 Troubleshooting
+
+**Port already in use?**
+```bash
+npm run dev -- -p 3001
+```
+
+**Dependencies not installing?**
+```bash
+npm cache clean --force
+npm install
+```
+
+**Build errors?**
+```bash
+rm -rf .next node_modules
+npm install
+npm run dev
+```
+
+---
+
+**Your resume is ready to impress! 🚀**
+
+The design is:
+- Elegant and professional
+- Unique with notebook aesthetic
+- Fully animated and interactive
+- Production-ready code
+- Easy to customize

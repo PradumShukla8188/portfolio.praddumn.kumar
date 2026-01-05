@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Crimson+Pro:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leather-dark: #2a1e12;
+  --leather-medium: #4d3729;
+  --leather-light: #7d6049;
+  --parchment-light: #fdfbf7;
+  --parchment-medium: #f3ebe0;
+  --gold-accent: #d4af37;
+  --ink-dark: #1a1612;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Pro', serif;
+  background: linear-gradient(135deg, #1a1612 0%, #2a1e12 50%, #3a2919 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--ink-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--leather-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a127;
+}
+
+/* Notebook texture effect */
+.paper-texture {
+  position: relative;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(180, 145, 95, 0.08) 31px,
+      rgba(180, 145, 95, 0.08) 32px
+    ),
+    linear-gradient(90deg, 
+      rgba(255, 250, 240, 0.95) 0%,
+      rgba(253, 251, 247, 0.98) 100%
+    );
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, transparent 0%, rgba(180, 145, 95, 0.03) 100%),
+    radial-gradient(circle at 80% 80%, transparent 0%, rgba(180, 145, 95, 0.02) 100%);
+  pointer-events: none;
+}
+
+/* Notebook margin line */
+.notebook-margin {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(220, 100, 100, 0.3) 10%,
+    rgba(220, 100, 100, 0.3) 90%,
+    transparent 100%
+  );
+}
+
+/* Page flip animation */
+.page-flip-enter {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+
+.page-flip-enter-active {
+  transform: rotateY(0deg);
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.page-flip-exit {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.page-flip-exit-active {
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Ink effect for text */
+.ink-text {
+  color: var(--ink-dark);
+  text-shadow: 0.5px 0.5px 0.5px rgba(26, 22, 18, 0.2);
+}
+
+/* Gold foil effect */
+.gold-foil {
+  background: linear-gradient(
+    135deg,
+    #d4af37 0%,
+    #f4d03f 25%,
+    #d4af37 50%,
+    #c9a127 75%,
+    #d4af37 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Vintage stamp effect */
+.vintage-stamp {
+  position: relative;
+  padding: 8px 16px;
+  border: 2px solid var(--leather-medium);
+  border-radius: 2px;
+  background: rgba(253, 251, 247, 0.5);
+  box-shadow: 
+    inset 0 0 10px rgba(77, 55, 41, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+}
+
+/* Handwritten effect */
+.handwritten {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* Book spine effect */
+.book-spine {
+  background: linear-gradient(
+    to right,
+    #3a2919 0%,
+    #4d3729 5%,
+    #64493a 10%,
+    #7d6049 50%,
+    #64493a 90%,
+    #4d3729 95%,
+    #3a2919 100%
+  );
+  box-shadow: 
+    inset -2px 0 4px rgba(0, 0, 0, 0.3),
+    inset 2px 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Embossed text */
+.embossed {
+  text-shadow: 
+    -1px -1px 0 rgba(255, 255, 255, 0.3),
+    1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
